@@ -1,0 +1,12 @@
+<article class="post-item">
+    <h2><%= category.name %></h2>
+   
+    <p><%= category.description %></p>
+    <div class="post-actions">
+      <form action="/category/<%= category.id %>/delete" method="post">
+      <button class="btn btn-alt">Delete category</button>
+      </form>
+      <a href="/category/<%= category.id %>/edit">Edit category</a>
+      <a class="btn" href="/category/<%= category.id %>">View category</a>
+    </div>
+  </article>

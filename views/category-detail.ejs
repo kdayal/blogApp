@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <%- include('includes/head', { title: category.title }) %>
+    <link rel="stylesheet" href="/styles/posts.css">
+    </head>
+
+    <body>
+    <%- include('includes/header') %>
+    <main id="post-detail">
+        <h1><%= category.name %></h1>
+        <section id="post-meta">
+        <time datetime="<%= category.date %>"><%= category.humanReadableDate %></time>
+        ...
+        </section>
+        <hr>
+        <section>
+        <p id="body"><%= category.description %></p>
+        </section>
+    </main>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'All Categories' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+
+</head>
+
+<body>
+    <%- include('includes/header') %>
+    <main id="all-posts">
+      <h1>All Categories</h1>
+       <% if (!categories || categories.length ===  0) { %>
+      <P>no categories found - maybe start creating some?</P>
+    <a class="btn" href="/new-category">create a new category</a>
+    <% } else { %>
+      <ol id="posts-list">
+        <% for (const category of categories) { %>
+         <li>
+          <%- include('includes/category-item' , {category: category }) %>
+         </li>
+       <% } %>
+  
+      </ol>
+    <% } %>
+    </main> 
+  </body>
+  
+  </html>

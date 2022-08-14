@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <%- include('includes/head', { title: 'Update Category' }) %>
+    <link rel="stylesheet" href="/styles/forms.css">
+    </head>
+
+    <body>
+    <%- include('includes/header') %>
+    <main>
+        <h1>Update Category</h1>
+        <form action="/category/<%= category.id %>/edit" method="POST">
+        <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="<%= category.name %>" name="name"required>
+        </div>
+        <div class="form-control">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required rows="5"><%= category.description %>
+            </textarea>
+        </div>
+        <button class="btn">Update Category</button>
+        </form>
+    </main>
+    </body>
+</html>
