@@ -4,6 +4,7 @@ const path = require('path');
 const express = require('express');
 
 const blogRoutes = require('./routes/blog.js');
+const categoryRoutes = require('./routes/category.js');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.static('public')); // Serve static files (e.g. CSS files)
 
 // express middleware
 app.use(blogRoutes);
+app.use(categoryRoutes);
 
 app.use(function (error, req, res, next) {
   // Default error handling function
